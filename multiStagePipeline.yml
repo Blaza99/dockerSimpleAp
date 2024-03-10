@@ -11,10 +11,10 @@ stages:
     steps:
     - task: Docker@2
       inputs:
+        containerRegistry: 'blazaCRSvc'
+        repository: 'SalesBook.LB'
         command: 'buildAndPush'
         Dockerfile: '**/SalesBook.LB/Dockerfile'
         tags: |
           $(Build.BuildId)
           latest
-
-  
